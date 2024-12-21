@@ -1,0 +1,36 @@
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+
+}
+
+.gallery {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.product-modal-img {
+  width: 1112px;
+  height: 640px;
+}
