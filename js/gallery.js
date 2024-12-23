@@ -63,10 +63,6 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-
-const galleryEl = document.querySelector('.js-gallery');
-
-
 //* Image card template
 /*
 <li class="gallery-item">
@@ -80,6 +76,9 @@ const galleryEl = document.querySelector('.js-gallery');
   </a>
 </li>
 */
+
+const galleryEl = document.querySelector('.js-gallery');
+
 const createImagesTemplate = image => {
   return `
     <li class="gallery-item js-gallery-item">
@@ -89,8 +88,8 @@ const createImagesTemplate = image => {
       src="${image.preview}"
       data-source="${image.original}"
       alt="${image.description}"
-      width="360";
-      height="200";
+      width="360"
+      height="200"
     />
   </a>
 </li>
@@ -103,7 +102,7 @@ galleryEl.innerHTML = imagesCardTemplate;
 
 const onModal = event => {
   event.preventDefault();
-  if (event.target.nodeName !== 'UL') {
+  if (event.target.nodeName === 'IMG') {
     const instance = basicLightbox.create(`
     <div class="modal">
         <img class="product-modal-img" src="${event.target.dataset.source}" alt="${event.target.alt}" />
@@ -112,7 +111,6 @@ const onModal = event => {
 
 instance.show()
   }
-  return;
 };
 
 galleryEl.addEventListener('click', onModal);
